@@ -1,0 +1,94 @@
+@mixin max-screen($res)
+{
+    @media screen and (max-width: $res)
+    {
+        @content;
+    }
+}
+
+$main-color: #259786;
+$main-font-size: 14px;
+* {
+    font-family: Arial,sans-serif;
+}
+a {
+    text-decoration: none;
+}
+header {
+    background: #fff;
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+        .header-flex-container {
+            display: flex;
+            justify-content: space-between;
+            .logo {
+                align-self: center;
+            }
+            .user-menu {
+                text-align: right;
+                a {
+                    color: $main-color;
+                    margin-left: 30px;
+                    font-size: $main-font-size;
+                }
+                .phone-number {
+                    color: $main-color;
+                    margin-top: 25px;
+                    font-size: 16px;
+                    span {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+section {
+    background: #e69a68;
+    .container {
+        .section-flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            h1 {
+                flex-basis: 480px;
+                text-align: right;
+                display: block;
+                color: #fff;
+                line-height: 50px;
+                font-size: 33px;
+                margin: 0 22px;
+                @include max-screen(800px) {
+                    flex-basis: 200px;
+                }
+            }
+            a {
+                padding: 25px 20px;
+                background: #d66114;
+                border-radius: 7px;
+                font-size: 45px;
+                display: block;
+                color: #fff;
+                margin: 0 22px;
+            }
+
+        }
+    }
+}
+.supported-devices {
+    background: #d68854;
+    padding: 25px;
+    .container {
+        .devices-images {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+    }
+}
