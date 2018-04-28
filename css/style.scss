@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'signikabold';
+  src: url('../fonts/signika-bold-webfont.woff2') format('woff2'),
+  url('../fonts/signika-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'signikaregular';
+  src: url('../fonts/signika-regular-webfont.woff2') format('woff2'),
+  url('../fonts/signika-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 @mixin max-screen($res)
 {
     @media screen and (max-width: $res)
@@ -5,20 +20,26 @@
         @content;
     }
 }
-
+$font-bold: 'signikabold';
 $main-color: #259786;
 $main-font-size: 14px;
 * {
-    font-family: Arial,sans-serif;
+    font-family: 'signikaregular',sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 a {
     text-decoration: none;
 }
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
 header {
+    padding: 10px;
     background: #fff;
     .container {
-        max-width: 960px;
-        margin: 0 auto;
         .header-flex-container {
             display: flex;
             justify-content: space-between;
@@ -37,13 +58,14 @@ header {
                     margin-top: 25px;
                     font-size: 16px;
                     span {
-                        font-weight: bold;
+                        font-family: $font-bold
                     }
                 }
             }
         }
     }
 }
+
 section {
     background: #e69a68;
     .container {
@@ -53,42 +75,106 @@ section {
             align-items: center;
             padding: 25px;
             h1 {
+                font-family: $font-bold;
                 flex-basis: 480px;
                 text-align: right;
                 display: block;
                 color: #fff;
                 line-height: 50px;
                 font-size: 33px;
-                margin: 0 22px;
+                margin-right: 20px;
                 @include max-screen(800px) {
-                    flex-basis: 200px;
+                  flex-basis: 200px;
                 }
             }
             a {
-                padding: 25px 20px;
+                padding: 20px;
                 background: #d66114;
                 border-radius: 7px;
                 font-size: 45px;
-                display: block;
+                line-height: 45px;
+                display: inline-block;
                 color: #fff;
-                margin: 0 22px;
+                font-family: $font-bold;
             }
-
         }
     }
 }
+
 .supported-devices {
     background: #d68854;
-    padding: 25px;
+    padding: 25px 0 20px;
     .container {
         .devices-images {
             text-align: center;
+            margin-bottom: 15px;
+            img {
+                margin:0 10px;
+            }
         }
         p {
             text-align: center;
             color: #fff;
             font-size: 20px;
             text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+}
+
+.benefits {
+    background: #fff;
+    padding-bottom: 40px;
+    .container {
+        h2 {
+            color: #236462;
+            font-size: 30px;
+            font-family: $font-bold;
+            padding: 40px 0;
+            text-transform: uppercase;
+            &:after {
+                content: '';
+                display: block;
+                width: 225px;
+                border: 2px solid #236462;
+                margin-top: 40px;
+            }
+        }
+        .benefits-flex-container {
+            display: flex;
+            justify-content: baseline;
+            h3 {
+                font-size: 16px;
+                font-family: $font-bold;
+                color: $main-color;
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: $main-font-size;
+                color: $main-color;
+                line-height: 20px;
+            }
+        }
+    }
+}
+footer {
+    background: $main-color;
+    padding: 45px 0 40px;
+    .container {
+        .footer-flex-container {
+            display: flex;
+            justify-content: space-between;
+            .copyright {
+                font-size: 12px;
+                color: #fff;
+            }
+            .terms {
+                color: #fff;
+                a {
+                    font-size: $main-font-size;
+                    color: #fff;
+                }
+            }
         }
     }
 }

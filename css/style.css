@@ -1,31 +1,46 @@
+@font-face {
+  font-family: 'signikabold';
+  src: url("../fonts/signika-bold-webfont.woff2") format("woff2"), url("../fonts/signika-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'signikaregular';
+  src: url("../fonts/signika-regular-webfont.woff2") format("woff2"), url("../fonts/signika-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 * {
-  font-family: Arial,sans-serif; }
+  font-family: 'signikaregular',sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
 
 a {
   text-decoration: none; }
 
+.container {
+  max-width: 960px;
+  margin: 0 auto; }
+
 header {
+  padding: 10px;
   background: #fff; }
-  header .container {
-    max-width: 960px;
-    margin: 0 auto; }
-    header .container .header-flex-container {
-      display: flex;
-      justify-content: space-between; }
-      header .container .header-flex-container .logo {
-        align-self: center; }
-      header .container .header-flex-container .user-menu {
-        text-align: right; }
-        header .container .header-flex-container .user-menu a {
-          color: #259786;
-          margin-left: 30px;
-          font-size: 14px; }
-        header .container .header-flex-container .user-menu .phone-number {
-          color: #259786;
-          margin-top: 25px;
-          font-size: 16px; }
-          header .container .header-flex-container .user-menu .phone-number span {
-            font-weight: bold; }
+  header .container .header-flex-container {
+    display: flex;
+    justify-content: space-between; }
+    header .container .header-flex-container .logo {
+      align-self: center; }
+    header .container .header-flex-container .user-menu {
+      text-align: right; }
+      header .container .header-flex-container .user-menu a {
+        color: #259786;
+        margin-left: 30px;
+        font-size: 14px; }
+      header .container .header-flex-container .user-menu .phone-number {
+        color: #259786;
+        margin-top: 25px;
+        font-size: 16px; }
+        header .container .header-flex-container .user-menu .phone-number span {
+          font-family: "signikabold"; }
 
 section {
   background: #e69a68; }
@@ -35,34 +50,83 @@ section {
     align-items: center;
     padding: 25px; }
     section .container .section-flex-container h1 {
+      font-family: "signikabold";
       flex-basis: 480px;
       text-align: right;
       display: block;
       color: #fff;
       line-height: 50px;
       font-size: 33px;
-      margin: 0 22px; }
+      margin-right: 20px; }
       @media screen and (max-width: 800px) {
         section .container .section-flex-container h1 {
           flex-basis: 200px; } }
     section .container .section-flex-container a {
-      padding: 25px 20px;
+      padding: 20px;
       background: #d66114;
       border-radius: 7px;
       font-size: 45px;
-      display: block;
+      line-height: 45px;
+      display: inline-block;
       color: #fff;
-      margin: 0 22px; }
+      font-family: "signikabold"; }
 
 .supported-devices {
   background: #d68854;
-  padding: 25px; }
+  padding: 25px 0 20px; }
   .supported-devices .container .devices-images {
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 15px; }
+    .supported-devices .container .devices-images img {
+      margin: 0 10px; }
   .supported-devices .container p {
     text-align: center;
     color: #fff;
     font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold; }
+
+.benefits {
+  background: #fff;
+  padding-bottom: 40px; }
+  .benefits .container h2 {
+    color: #236462;
+    font-size: 30px;
+    font-family: "signikabold";
+    padding: 40px 0;
     text-transform: uppercase; }
+    .benefits .container h2:after {
+      content: '';
+      display: block;
+      width: 225px;
+      border: 2px solid #236462;
+      margin-top: 40px; }
+  .benefits .container .benefits-flex-container {
+    display: flex;
+    justify-content: baseline; }
+    .benefits .container .benefits-flex-container h3 {
+      font-size: 16px;
+      font-family: "signikabold";
+      color: #259786;
+      margin-bottom: 20px; }
+    .benefits .container .benefits-flex-container p {
+      font-size: 14px;
+      color: #259786;
+      line-height: 20px; }
+
+footer {
+  background: #259786;
+  padding: 45px 0 40px; }
+  footer .container .footer-flex-container {
+    display: flex;
+    justify-content: space-between; }
+    footer .container .footer-flex-container .copyright {
+      font-size: 12px;
+      color: #fff; }
+    footer .container .footer-flex-container .terms {
+      color: #fff; }
+      footer .container .footer-flex-container .terms a {
+        font-size: 14px;
+        color: #fff; }
 
 /*# sourceMappingURL=style.css.map */
